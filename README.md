@@ -3,14 +3,16 @@
 async/await以及promise之间的关系
 
 async和await
-
+-------
         随着node版本的更新，越来越多人开始研究、使用async和await，我对这个不是很了解，所以决定研究一下，然后水一帖。
         JavaScript 的 async/await 实现，也离不开 Promise。
 
 async和await到底是干什么的？
+---------------
+
         任何一个代码单词，它的名称都是有意义的，先看英文单词，async是’异步’的简写，await可以看成 async wait 等待异步，所以可以理解async用于声明一个function是异步的，而await就是等待一个异步方法的执行完成。
 async 起什么作用？
-
+----------
         这个问题的关键是async函数是怎么处理返回值的。我们来写一个例子
 Async function test1 () {
     return ‘hello async'
@@ -26,6 +28,7 @@ test1().then(v => {console.log(v)})
 联想一下 Promise 的特点——无等待，所以在没有 await 的情况下执行 async 函数，它会立即执行，返回一个 Promise 对象，并且，绝不会阻塞后面的语句。这和普通返回 Promise 对象的函数并无二致。
 
 await在等啥玩意呢？
+---------------
 
 一般来说，await在等一个async函数的完成。不过按语法说明，await等待的是一个表达式，但表达式结果没有特殊限定。
 
@@ -52,6 +55,7 @@ f();
 
 
 await等到了要等的，然后呢
+-------------------
 
 await等到promise时，它会阻塞后面的代码，等着promise对象resolve，然后得到resolve的值，作为await的结果。这也是为啥await必须在async函数中执行，async 函数调用不会造成阻塞，它内部所有的阻塞都被封装在一个 Promise 对象中异步执行。 
 
