@@ -1,5 +1,5 @@
 本文借鉴参考了边城先生的《理解 JavaScript 的 async/await》如作者觉得不妥，请随时联系我将之撤下。
-# async-await
+# async/await
 async/await以及promise之间的关系
 
 async和await
